@@ -1,4 +1,5 @@
 # linux - installing void-linux with linux-surface kernel
+mournfully/void-packages/srcpkgs/linux-surface (https://github.com/mournfully/void-packages/tree/3d00038dcb2bb61c9a1229b790242b821d1c2864/srcpkgs/linux-surface)
 
 ### Patching Kernels
 To make a kernel with a linux-surface patchset for your void-linux install with native xbps integration, and with void's kernel install scripts `/etc/kernel.d`. This is done by editing a linuxv5.x template from the void-packages repo.
