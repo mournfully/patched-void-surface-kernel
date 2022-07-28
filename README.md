@@ -1,6 +1,4 @@
-# linux - installing void-linux with linux-surface kernel
-mournfully/void-packages/srcpkgs/linux-surface (https://github.com/mournfully/void-packages/tree/3d00038dcb2bb61c9a1229b790242b821d1c2864/srcpkgs/linux-surface)
-
+# Installing void-linux with linux-surface kernel
 ### Patching Kernels
 To make a kernel with a linux-surface patchset for your void-linux install with native xbps integration, and with void's kernel install scripts `/etc/kernel.d`. This is done by editing a linuxv5.x template from the void-packages repo.
 
@@ -10,7 +8,7 @@ cd void-packages
 ./xbps-src binary-bootstrap
 ```
 
-In this folder, copy `srcpkgs/linux5.18` to `srcpkgs/linux-surface`. This new package title will be henceforth referred to as `<pkgname>` and the directory you've created above I would now call `srcpkgs/<pkgname>`
+In this folder, make a copy of `srcpkgs/linux5.18` and rename it `srcpkgs/linux-surface`. This new package title will be henceforth referred to as `<pkgname>` and the directory you've created above I would now call `srcpkgs/<pkgname>`
 
 Edit the template and change the `pkgname` variable to reflect your directory title 
 (`pkgname=linux5.18` -> `pkgname=linux-surface`)
@@ -19,7 +17,7 @@ Change the `_kernver` variable to reflect your modified patchset version
 (`${version}_${revision}` -> `${version}_${revision}-<patchset name>` aka `${version}_${revision}-surface`)
 
 Change the following expression to match your `_kernver` variable. 
-(`sed -i -e "s|^\(CONFIG_LOCALVERSION=\).*|\1\"_${revision}\"|" .config` -> 
+(`sed -i -e "s|^\(CONFIG_LOCALVERSION=\).*|\1\"_${revision}\"|" .config` aka 
 `sed -i -e "s|^\(CONFIG_LOCALVERSION=\).*|\1\"_${revision}-surface\"|" .config`)
 
 use `vim template` and hotkey `shift+g` to get to the bottom of your file and  change the subpackage titles to reflect your new package name. 
@@ -30,9 +28,14 @@ Then make symlink like so, while in the `void-packages/srcpkg` directory.
 (`ln -s <pkgname> <pkgname>-headers` -> `ln -s linux-surface/ linux-surface-headers`)
 (`ln -s <pkgname> <pkgname>-dbg` -> `ln -s linux-surface/ linux-surface-dbg`)
 
-To ensure that all Surface related options are set, you should merge this base config with one of the surface config fragments in `linux-surface/configs/`.
+To ensure that all Surface related options are set, you should merge the base config `srcpkg/<pkgname>/files/x86_64-dotconfig-custom` with one of the surface config fragments in `linux-surface/configs/` (just copy and paste `linux-surface/configs/` at the bottom of `x86_64-dotconfig-custom`). 
 
-Since, you will be needing custom patches, put them in `srcpkgs/<pkgname>/patches/`.
+Most distro's have these enabled by default unlike void-linux so make sure the following options are enabled in your merged config file `x86_64-dotconfig-custom`.
+- `CONFIG_ACPI=y`
+- `CONFIG_DMI=y`
+- `CONFIG_SURFACE_GPE=y`
+
+Since, you will be needing custom patches, copy them from `linux-surface/5.18/*.patch` and put them in `srcpkgs/<pkgname>/patches/`.
 
 Install `sudo xbps-install xtools` and then while in the `srcpkgs/` use `xgensum -i <pkgname>` aka `xgensum -i linux-surface` to give your template the correct checksums for your source files.
 
