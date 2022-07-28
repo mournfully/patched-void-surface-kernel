@@ -1,8 +1,9 @@
 # Installing void-linux with linux-surface kernel
 ### Patching Kernels
-To make a kernel with a linux-surface patchset for your void-linux install with native xbps integration, and with void's kernel install scripts `/etc/kernel.d`. This is done by editing a linuxv5.x template from the void-packages repo.
+To make a kernel with a linux-surface patchset for your void-linux install with native xbps integration, and with void's kernel install scripts `/etc/kernel.d`. This is done by editing a `linuxv5.x` template of your choice from the void-packages repo.
 
 ```
+git clone https://github.com/linux-surface/linux-surface
 git clone https://github.com/void-linux/void-packages
 cd void-packages
 ./xbps-src binary-bootstrap
@@ -48,8 +49,8 @@ Go to the root dir of your cloned void packages git repo.  (`xi <pkgname>-header
 Voila! you now have the benefit of full integration with xbps including the package configuration step generating the initramfs as well as running your bootloader kernel install hooks.
 
 ### References
-mournfully/void-packages
-https://github.com/mournfully/void-packages
+linux-surface/linux-surface: Linux Kernel for Surface Devices
+https://github.com/linux-surface/linux-surface
 
 New package: linux-surface 5.13.13 by RononDex · Pull Request #32823 · void-linux/void-packages
 https://github.com/void-linux/void-packages/pull/32823/files#diff-11976dfa1b101f08cc798bfa749f176cedf383210b4c4bbe27c9d4f1cda05e03
@@ -67,3 +68,4 @@ gamja IRC client | voidlinux
 https://web.libera.chat/gamja/
 
 ~1.5 weeks of testing changes and waiting for them to compile 😭
+source: my sanity
