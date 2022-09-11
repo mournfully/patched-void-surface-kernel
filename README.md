@@ -67,5 +67,5 @@ https://app.element.io/?pk_vid=fd3467fea1790b0d1654682955d18ee1#/room/#linux-sur
 gamja IRC client | voidlinux
 https://web.libera.chat/gamja/
 
-~1.5 weeks of testing changes and waiting for them to compile 😭
+~1.5 weeks of testing changes and recompiling the entire kernel everytime on one underpowered laptop while I was in school lol
 source: my sanity
