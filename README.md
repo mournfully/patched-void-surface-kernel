@@ -1,4 +1,6 @@
 # Installing void-linux with linux-surface kernel
+> **Warning** This is not a guide you should blindly follow nor a standalone tutorial. It is just my attempt at documenting all the hoops I had to jump through to get a working kernel. Which I've posted here in the hopes that it might help someone else in the future avoid some of the pitfalls I leaped head first into. If you happen to get stuck, I recommend seeking help on the linux-surface matrix room or the void-linux irc chat.
+
 ### Patching Kernels
 To make a kernel with a linux-surface patchset for your void-linux install with native xbps integration, and with void's kernel install scripts `/etc/kernel.d`. This is done by editing a `linuxv5.x` template of your choice from the void-packages repo.
 
@@ -69,3 +71,4 @@ https://web.libera.chat/gamja/
 
 ~1.5 weeks of testing changes and recompiling the entire kernel everytime on one underpowered laptop while I was in school lol
 source: my sanity
+
