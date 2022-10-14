@@ -1,4 +1,4 @@
-# Installing void-linux with linux-surface kernel
+# Installing void-linux with linux-surface kernel on a surface laptop 2
 > **Warning** This is not a guide you should blindly follow nor a standalone tutorial. It is just my attempt at documenting all the hoops I had to jump through to get a working kernel. Which I've posted here in the hopes that it might help someone else in the future avoid some of the pitfalls I leaped head first into. If you happen to get stuck, I recommend seeking help on the linux-surface matrix room or the void-linux irc chat.
 
 ### Patching Kernels
