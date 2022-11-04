@@ -3,6 +3,10 @@
 
 i just tried to use this repo to build my kernel and ran into quite a few problems. Regardless, I managed to get it done in a couple of days what would have normally taken me weeks thanks to this repo. I'll make an updated v2 when I have the time, but for now if you need to use this repo to get your own kernel up and running, refer [to this note that i was using while working through my second kernel](README.md.new). It's definetly not polished nor is it supposed to be shown to other people, but I hope it can save you some of the headaches I had to experience... again.
 
+PS: don't use the binaries in the releases, they seemed to make my wifi card really unstable and make my connection drop for 5 minutes every 40 minutes. would not recommend.
+
+---
+
 ### Patching Kernels
 To make a kernel with a linux-surface patchset for your void-linux install with native xbps integration, and with void's kernel install scripts `/etc/kernel.d`. This is done by editing a `linuxv5.x` template of your choice from the void-packages repo.
 
